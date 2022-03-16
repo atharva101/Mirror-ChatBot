@@ -1,12 +1,16 @@
 import React from "react";
-
-
-export const Header = ()=>{
+import amber from '../../assets/amber.png'
+import './header.styles.css'
+export const Header = ({user})=>{
 
     return(
         <div className = "header-container">
-            <img src="G:\projects\React\infeedo\public\assets\amber.png" alt="amber" />
-            <h1>Amber</h1>
+           <div className="item" id="item-1">
+               <img src={amber} alt="" style={{height:120}} />
+           </div>
+           <div className="item" id="item-2">
+               <p> Hi {user} I'm Amber</p>
+           </div>
         </div>
     )
 }

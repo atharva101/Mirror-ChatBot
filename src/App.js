@@ -1,12 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import { chatpage } from './Pages/ChatPage/chatPage.component';
 import {Header} from './Components/header/header.component'
+import {ChatEl} from './Components/ChatElement/ChatEl.component'
 function App() {
+  
   return (
     <div className="App">
-      <chatpage/>
       <Header/>
+      <ChatEl/>
     </div>
   );
 }
