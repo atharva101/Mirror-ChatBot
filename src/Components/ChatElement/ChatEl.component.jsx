@@ -2,8 +2,8 @@ import React, { createElement, useEffect, useState } from "react";
 import './ChatEl.styles.css'
 export const ChatEl = () =>{
     
-    const[currentValue,setCurrentValue] = useState({'user':'','message':''})
-    const[chatMessage,setChatMessage] = useState(()=> {
+    const[currentValue,setCurrentValue] = useState({'message':''})
+    const[chatMessage] = useState(()=> {
         const retrievedData = localStorage.getItem("chatHistory");
         const initialVal = JSON.parse(retrievedData);
         return initialVal || []
@@ -17,8 +17,9 @@ export const ChatEl = () =>{
        let inputVal = document.getElementById('messageInput').value  
        document.getElementById('messageInput').value ='' //gets the input text  
        if(inputVal && inputVal !== ''){ 
-           setCurrentValue({user:'you', message: `${inputVal}`})  // setting up in state so that it can be passed to chat message
+           setCurrentValue({ message: `${inputVal}`})  // setting up in state so that it can be passed to chat message
            chatMessage.push(inputVal)
+           //chatMessage.push(currentValue)
            //console.log(chatMessage)
            //console.log(typeof(chatMessage))
        }   
@@ -52,7 +53,6 @@ export const ChatEl = () =>{
                 <p id="typing">typing</p>
                 <button className ="circular"  id="sendMessage" onClick={e=> {handleClick(e)}}>Send</button>
                 <input type="text" id="messageInput" onKeyUp={e =>{handleKeyUp()}} onKeyDown ={ e=>{handleKeyDown()}}/>
-               
             </div> 
             
         </div>
