@@ -9,7 +9,7 @@ export const Header = ({user})=>{
                <img src={amber} alt="" style={{height:120}} />
            </div>
            <div className="item" id="item-2">
-               <p> Hi {user} I'm Amber</p>
+               <p> Hi! I'm Amber</p>
            </div>
         </div>
     )

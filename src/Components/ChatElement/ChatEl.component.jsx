@@ -52,7 +52,7 @@ export const ChatEl = () =>{
                 <p id="typing">typing</p>
                 <button className ="circular"  id="sendMessage" onClick={e=> {handleClick(e)}}>Send</button>
                 <input type="text" id="messageInput" onKeyUp={e =>{handleKeyUp()}} onKeyDown ={ e=>{handleKeyDown()}}/>
-                {console.log(currentValue)}
+               
             </div> 
             
         </div>
